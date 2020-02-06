@@ -6,6 +6,7 @@ import Title from "../title/Title";
 import Loading from "../loading/Loading";
 import Room from "../room/Room";
 import "./FeaturedRooms.css";
+import Fade from "react-reveal";
 
 export default class FeaturedRooms extends Component {
   static contextType = RoomContext;
@@ -20,9 +21,11 @@ export default class FeaturedRooms extends Component {
     return (
       <section className="featured-rooms">
         <Title title="Featured Rooms" />
-        <div className="featured-rooms-center">
-          {loading === true ? <Loading /> : rooms}
-        </div>
+        <Fade bottom>
+          <div className="featured-rooms-center">
+            {loading === true ? <Loading /> : rooms}
+          </div>
+        </Fade>
       </section>
     );
   }
