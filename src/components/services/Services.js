@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import Title from "../title/Title";
 import "./Services.css";
+import Fade from "react-reveal";
 
 export default class Services extends Component {
   constructor(props) {
@@ -43,18 +44,20 @@ export default class Services extends Component {
   render() {
     return (
       <section className="services">
-        <Title title="Services"></Title>
-        <div className="services-center">
-          {this.state.services.map((item, index) => {
-            return (
-              <article key={index}>
-                <span>{item.icon}</span>
-                <h6>{item.title}</h6>
-                <p>{item.desc}</p>
-              </article>
-            );
-          })}
-        </div>
+        <Fade right>
+          <Title title="Services"></Title>
+          <div className="services-center">
+            {this.state.services.map((item, index) => {
+              return (
+                <article key={index}>
+                  <span>{item.icon}</span>
+                  <h6>{item.title}</h6>
+                  <p>{item.desc}</p>
+                </article>
+              );
+            })}
+          </div>
+        </Fade>
       </section>
     );
   }
