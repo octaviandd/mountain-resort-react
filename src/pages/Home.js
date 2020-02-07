@@ -24,7 +24,6 @@ export default class Home extends Component {
         </Hero>
         <Services />
         <FeaturedRooms />
-        <RoomsContainer />
       </div>
     );
   }
